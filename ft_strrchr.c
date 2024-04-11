@@ -6,13 +6,13 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 01:53:39 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/11 05:57:19 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/11 12:36:39 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 

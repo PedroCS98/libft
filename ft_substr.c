@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 19:21:18 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/11 11:52:18 by psimoes          ###   ########.fr       */
+/*   Created: 2024/04/11 08:15:14 by psimoes           #+#    #+#             */
+/*   Updated: 2024/04/11 09:16:42 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	char	*s;
-	char	*d;
+	char	*substr;
 
-	s = (char *) src;
-	d = (char *) dest;
-	i = -1;
-	while (++i < n)
-	{
-		d[i] = s[i];
-	}
-	return (dest);
+	substr = (char *)malloc((sizeof (char) * (len + 1)));
+	if (substr == NULL)
+		return (NULL);
+	ft_strlcpy(substr, s + start, len + 1);
+	return (substr);
 }
-/*int main(){
-	char str1[50];
-	strcpy(str1, "This is a test!");
-	char str2[50];
-	strcpy(str2, "hihihihihihihihihihhi");
-	//char *str = "This is a test!";
-	ft_memcpy(str2, str1, 8);
-	printf("%s", str2);
+/*int	main(){
+	char const *s = "This is a test!";
+	unsigned int start = 5;
+	size_t len = 7;
+	char *str = ft_substr(s, start, len);
+	printf("%s\n",str);
+	free(str);
 }*/
