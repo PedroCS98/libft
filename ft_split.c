@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:27:42 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/11 13:28:25 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/11 18:48:51 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 char **ft_split(char const *s, char c)
 {
-    
+    (void) s;
+    (void) c;
+
+    return(0);
 }
