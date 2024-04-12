@@ -5,7 +5,7 @@ ft_memmove.c ft_strlcat.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_s
 ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c
 OBJS = $(SRCS:.c=.o)
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g -O0
 
 all: $(NAME)
 
@@ -13,12 +13,20 @@ $(NAME): $(OBJS)
 	ar rsc $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
+
+run:
+	cc libft.a && valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out
+
+rerun: re run
+
+gdb:	all
+		cc libft.a && gdb --args ./a.out
 
 fcount:
 	@echo "You have written $(shell cat $(SRCS) | wc -l) lines of code!"

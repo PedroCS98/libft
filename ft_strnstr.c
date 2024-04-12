@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 03:57:24 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/11 17:42:43 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/12 16:28:25 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			&& large_string[i + j] == small_string[j] 
 			&& i + j < len)
 			j++;
-		if ((int)j == ft_strlen(small_string))
+		if (j == ft_strlen(small_string))
 			return (&large_string[i]);
 		i++;
 	}

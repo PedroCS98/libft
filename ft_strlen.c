@@ -6,13 +6,15 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 19:18:51 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/11 12:09:21 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/12 16:27:44 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = -1;
 	while (s[++i])

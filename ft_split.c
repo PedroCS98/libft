@@ -6,61 +6,109 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:27:42 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/11 18:48:51 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/12 21:45:03 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+static int	word_count(char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		wc;
-	char	**array;
-	char	*str;
+	int	wc;
+	int	i;
 
 	i = -1;
-	wc = 1;
+	wc = 0;
+	if (s[0] != c && s[0] != 0)
+		wc++;
 	while (s[++i] != 0)
 	{
-		if (s[i] == c)
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != 0)
 			wc++;
 	}
-	array = (char **)malloc(wc + 1);
-	if (!array)
-		return(NULL);
-	i = 0;
-	wc = 0;
-	while (s[i] != 0)
-	{
-		j = 0;
-		str = (char *)malloc(ft_strlen(s) + 1);
-		if (!str)
-			return (NULL);
-		while (s[i+j++] != c)
-		{
-			str[j] = s[i + j];
-		}
-		array[wc] = str;
-		wc++;
-		free(str);
-		i += j + 1;
-	}
-	array[wc] = 0;
-	return(array);
+	return (wc);
 }
 
-int	main(){
-	char **array;
-	char *s[] = "Hoje e terca feira";
-	char c = ' ';
-	array = ft_split(s, c);
-	int i = 0;
-	while (array)
-	{
-		puts(array[i]);
-		i++;
-	}
-	free(array);
+int	assign_stuff(int *str_len, char ***array, char const *s, char c)
+{
+	int	n;
+
+	*array = NULL;
+	n = word_count(s, c);
+	*str_len = (int)ft_strlen(s);
+	*array = (char **)malloc(sizeof(char *) * (n + 1));
+	if (!*array)
+		return (0);
+	(*array)[n] = NULL;
+	return (n);
 }
+
+char	**verdadeiro_split(int str_len, char **array, char const *s, char c)
+{
+	int	i;
+	int	m;
+	int	n;
+
+	if (!assign_stuff(&str_len, &array, s, c))
+		return (NULL);
+	m = 0;
+	i = 0;
+	while (s[i] != 0)
+	{
+		while (s[i] == c && s[i] != 0)
+			i++;
+		str_len = 0;
+		while (s[i + str_len] != c && s[i + str_len] != 0)
+			str_len++;
+		array[m] = (char *)malloc(sizeof(char) * str_len + 1);
+		if (!array[m])
+			return (NULL);
+		n = 0;
+		while (n < str_len && s[i] != c)
+			array[m][n++] = s[i++];
+		array[m++][n] = 0;
+	}
+	return (array);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		str_len;
+	char	**array;
+
+	array = NULL;
+	str_len = 0;
+	return (verdadeiro_split(str_len, array, s, c));
+}
+
+// void free_double_ptr(char **d_ptr)
+// {
+// 	if (d_ptr != NULL)
+// 	{
+// 		while (*d_ptr)
+// 		{
+// 			free(*d_ptr);
+// 			(d_ptr)++;
+// 		}
+// 		free(d_ptr);
+// 	}
+// }
+// int	main(){
+// 	char **array;
+// 	char *s = "Hoje e terca feira";
+// 	char c = ' ';
+// 	array = ft_split(s, c);
+// 	int i = 0;
+// 	while (array[i])
+// 	{
+// 		printf("%s\n", array[i]);
+// 		free(array[i]);
+// 		i++;
+// 	}
+// 	free(array);
+// 	//free_double_ptr(array);
+// }
+//skip seperator
+//ver qts char ate prox sep
+//alloc mem
+//copiar cada carater
