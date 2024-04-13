@@ -6,31 +6,29 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 04:31:08 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/11 14:06:41 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/13 03:16:51 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_atoi(const char *nptr)
 {
-	char	*str;
 	int		nbr;
 	int		i;
 	int		polarity;
 
-	str = (char *) nptr;
 	i = 0;
-	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+	while ((nptr[i] >= '\t' && nptr[i] <= '\r') || nptr[i] == ' ')
 		i++;
 	polarity = 1;
-	while (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i++] == '-')
+	if (nptr[i] == '-' || nptr[i] == '+')
+		if (nptr[i++] == '-')
 			polarity = -1;
-	}
 	nbr = 0;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		nbr = nbr * 10 + str[i] - '0';
+		nbr = nbr * 10 + nptr[i] - '0';
 		i++;
 	}
 	return (nbr * polarity);

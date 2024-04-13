@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 19:17:49 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/13 03:17:14 by psimoes          ###   ########.fr       */
+/*   Created: 2024/04/12 23:03:57 by psimoes           #+#    #+#             */
+/*   Updated: 2024/04/13 03:11:34 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	return (c >= ' ' && c <= '~');
+	int	i;
+	
+	i = -1;
+	if (s)
+		while (s[++i] != 0)
+			f(i, &s[i]);
 }
