@@ -27,10 +27,7 @@ int	ft_atoi(const char *nptr)
 			polarity = -1;
 	nbr = 0;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		nbr = nbr * 10 + nptr[i] - '0';
-		i++;
-	}
+		nbr = nbr * 10 + nptr[i++] - '0';
 	return (nbr * polarity);
 }
 /*int main()

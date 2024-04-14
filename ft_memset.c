@@ -15,9 +15,9 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
-	char	*str;
+	unsigned char	*str;
 
-	str = (char *) s;
+	str = (unsigned char *) s;
 	i = -1;
 	while (++i < n)
 	{
@@ -25,10 +25,19 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-/*int main(){
-	char str[50];
-	strcpy(str, "This is a test!");
-	//char *str = "This is a test!";
-	ft_memset(str, '-', 5);
-	printf("%s", str);
+
+/*int main(void)
+{
+	char test[50];
+	strcpy(test, "This is a test!");
+	char  sub1[50];
+	strcpy(sub1, test);
+	char  sub2[50];
+	strcpy(sub2, test);
+	printf("%s\n", test);
+	size_t size = strlen(test);
+	ft_memset(sub1, 128, 5);
+	memset(sub2, 128, 5);
+	printf("%s\n", sub1);
+	printf("%s\n", sub2);
 }*/
