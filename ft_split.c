@@ -29,7 +29,7 @@ static int	word_count(char const *s, char c)
 	return (wc);
 }
 
-int	assign_stuff(int *str_len, char ***array, char const *s, char c)
+static int	split_inator_inator(int *str_len, char ***array, char const *s, char c)
 {
 	int	n;
 
@@ -43,13 +43,13 @@ int	assign_stuff(int *str_len, char ***array, char const *s, char c)
 	return (n);
 }
 
-char	**verdadeiro_split(int str_len, char **array, char const *s, char c)
+static char	**split_inator(int str_len, char **array, char const *s, char c)
 {
 	int	i;
 	int	m;
 	int	n;
 
-	if (!assign_stuff(&str_len, &array, s, c))
+	if (!split_inator_inator(&str_len, &array, s, c))
 		return (NULL);
 	m = 0;
 	i = 0;
@@ -78,7 +78,7 @@ char	**ft_split(char const *s, char c)
 
 	array = NULL;
 	str_len = 0;
-	return (verdadeiro_split(str_len, array, s, c));
+	return (split_inator(str_len, array, s, c));
 }
 
 // void free_double_ptr(char **d_ptr)
