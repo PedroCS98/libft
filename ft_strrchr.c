@@ -18,20 +18,17 @@ char	*ft_strrchr(const char *s, int c)
 
 	if (*s == '\0')
 		return (NULL);
-	i = ft_strlen(s) - 1;
-	while (i >= 0)
-	{
+	i = ft_strlen(s) + 1;
+	while (--i >= 0)
 		if (s[i] == (char) c)
 			return ((char *)(s + i));
-		i--;
-	}
 	return (NULL);
 }
 
 /*#include <string.h>
 int main()
 {
-	int c = ' ';
+	int c = '\0';
 	char *str = "This is a test!";
 	printf("%s\n", ft_strrchr(str, c));
 	printf("%s\n", strrchr(str, c));

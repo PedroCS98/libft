@@ -15,15 +15,21 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	char	*str1;
-	char	*str2;
 
-	str1 = (char *)s1;
-	str2 = (char *)s2;
 	i = 0;
-	while (str1[i] != '\0' && str2[i] != '\0' && str1[i] == str2[i] && i < n)
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i] && i < n)
 		i++;
 	if (i == n)
 		return (0);
-	return (str1[i] - str2[i]);
+	return (s1[i] - s2[i]);
 }
+
+/*#include <string.h>
+int	main(){
+	char src[] = "This is a test! ";
+	char src2[] = "This is a test!";
+	size_t n = ft_strlen(src);
+	printf("%d\n", ft_strncmp(src, src2, n));
+	printf("%d\n", ft_strncmp(src2, src, n));
+	printf("%d\n", strncmp(src2, src, n));
+}*/

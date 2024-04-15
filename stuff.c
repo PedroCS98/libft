@@ -1,7 +1,6 @@
 
 // tem main
 
-// strnstr
 // strtrim
 // substr
 
@@ -22,6 +21,7 @@
 
 // check output - do all mains
 // take out unnecessary makefile rules and save them somewhere else
+// check if all casts are needed
 // delete stuff.c
 
 char	*ft_itoa(int n)
