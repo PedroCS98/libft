@@ -24,8 +24,7 @@ char	*ft_strdup(const char *s)
 }
 
 /*#include <string.h>
-int	main()
-{
+int	main(){
 	printf("%s\n", ft_strdup("This is a test!"));
 	printf("%s\n", strdup("This is a test!"));
 }*/

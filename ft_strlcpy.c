@@ -30,7 +30,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	char	test1[50] = "This is a ";
 	char	test2[50] = "Test!";
 	size_t	size = 15;
-	printf("Final sentence is: %s\nAnd the size is %d", 
+	printf("Final sentence is: %s\nAnd the size is %d\n", 
 	test1, (int)ft_strlcpy(test1, test2, size));
 	return (0); 
 }*/

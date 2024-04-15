@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_striteri.                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -21,3 +21,16 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		while (s[++i] != 0)
 			f(i, &s[i]);
 }
+
+/*static	void ft_putchr(unsigned int i, char *s)
+{
+	while (s[i])
+		write(1, &s[i++], 1);
+	write(1, "\n", 1);
+}
+
+int main(){
+	char *s = "ThIs iS a TeSt!";
+	ft_striteri(s, &ft_putchr);
+	printf("%s\n", s);
+}*/

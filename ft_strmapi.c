@@ -26,3 +26,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = 0;
 	return (str);
 }
+
+/*char	my_ft_tolower(unsigned int c, char x)
+{
+	(void) x;
+	if (c >= 'A' && c <= 'Z')
+		return (c += 32);
+	return (c);
+}
+
+int main(){
+	char *s = "ThIs iS a TeSt!";
+	ft_strmapi(s, &my_ft_tolower);
+	printf("%s\n", s);
+}*/

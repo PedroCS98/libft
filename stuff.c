@@ -1,27 +1,18 @@
 
-// tem main
+// testar
 
-// strtrim
-// substr
-
-
-// nao tem main
-
+// substr (unknown L)
 // lists
-// fd's
-// striteri
-// strmapi
-// strncmp
+// fd's (how)
 
 
-// how to test fd
-// how to test striteri
 // how to test strmapi
 
 
 // check output - do all mains
+//meter 42 headers
 // take out unnecessary makefile rules and save them somewhere else
-// check if all casts are needed
+//norminette
 // delete stuff.c
 
 char	*ft_itoa(int n)
