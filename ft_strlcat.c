@@ -16,35 +16,22 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	size_t	src_len;
-	size_t	dst_len;
 
-	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dst);
-	if (size == 0 || size <= dst_len)
-		return (src_len + size);
-	i = 0;
-	j = dst_len;
-	while (src && i < size - dst_len - 1)
-	{
-		dst[j] = src[i];
-		i++;
-		j++;
-	}
-	dst[j] = '\0';
-	return (src_len + dst_len);
+	i = ft_strlen(dst);
+	if (size == 0 || size <= i--)
+		return (ft_strlen(src) + size);
+	j = i + 1;
+	while (src[++i - j] && i < size - 1)
+		dst[i] = src[i - j];
+	dst[i] = '\0';
+	return (i);
 }
+
 /*int	main(void)
 {
-	//i is just a counter
-	//j is dest size
-	//k is src size
-	char	test1[50] = "This is a ";
-	char	test2[50] = "Test!";
-	size_t	size = 15;
-	
-	//ft_strlcat(test1, test2, size);
+	char	test1[] = "This is a ";
+	char	test2[50] = "test!";
+	size_t	size = 16;
 	printf("Final sentence is: %s\nAnd the size is %d", 
 test1, (int)ft_strlcat(test1, test2, size));
-	return (0); 
 }*/

@@ -28,5 +28,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char *str1 = "This is";
 	char *str2 = " a test!";
 	printf("%s\n", ft_strjoin(str1, str2));
-	return (0);
 }*/

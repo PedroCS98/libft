@@ -27,12 +27,16 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*int main(){
-	char str1[50];
-	strcpy(str1, "This is a test!");
-	char str2[50];
-	strcpy(str2, "hihihihihihihihihihhi");
-	//char *str = "This is a test!";
-	ft_memcpy(str2, str1, 8);
-	printf("%s", str2);
+
+/*#include <string.h>
+int main(){
+	char src[] = "This is a test!";
+	char src2[] = "This is a test!";
+	//char dst1[50];
+	//char dst2[50];
+	ft_memcpy(src, src, ft_strlen(src));
+	memcpy(src2, src2, ft_strlen(src));
+	printf("%s\n", src);
+	printf("%s\n", src2);
+	//printf("%s\n", dst2);
 }*/

@@ -14,25 +14,23 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*s;
-	char		*d;
-
-	s = (char *) src;
-	d = (char *) dest;
-	if (d > s)
-	{
-		while ((int)--n >= 0)
-		{
-			d[n] = s[n];
-		}
-	}
+	if (dest > src)
+		while (n--)
+			((char *)dest)[n] = ((char *)src)[n];
 	else 
 		ft_memcpy(dest, src, n);
 	return (dest);
 }
-/*int main(){
-	char str1[50];
-	strcpy(str1, "This is a test!");
-	ft_memmove(str1, str1, 5);
-	printf("%s", str1);
+
+/*#include <string.h>
+int main(){
+	char *test = "This is a test!";
+	char *src1 = ft_strdup(test);
+	char *src2 = ft_strdup(test);
+	ft_memmove(src1+2, src1, ft_strlen(src1));
+	memmove(src2+2, src2, ft_strlen(src2));
+	printf("%s\n", src1);
+	printf("%s\n", src2);
+	// printf("%p\n", &src1);
+	// printf("%p\n", &src2);
 }*/
