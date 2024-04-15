@@ -21,3 +21,12 @@ size_t	ft_strlen(const char *s)
 		;
 	return (i);
 }
+
+/*#include <string.h>
+int	main()
+{
+	const char	*s = "This is a test!";
+	//const char	*s = "\0";
+	printf("%d\n", (int)ft_strlen(s));
+	printf("%d\n", (int)strlen(s));
+}*/

@@ -96,7 +96,7 @@ char	**ft_split(char const *s, char c)
 int	main(){
 	char **array;
 	char *s = "This is a test!";
-	char c = ' ';
+	char c = 't';
 	array = ft_split(s, c);
 	int i = 0;
 	while (array[i])
