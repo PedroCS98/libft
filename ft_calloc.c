@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	*calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
@@ -22,3 +22,10 @@ void	*calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, size);
 	return (ptr);
 }
+
+/*#include <stdlib.h>
+int	main()
+{
+	printf("%p\n", ft_calloc(20, 5));
+	printf("%p\n", calloc(20, 5));
+}*/

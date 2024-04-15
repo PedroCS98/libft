@@ -19,6 +19,13 @@ char	*ft_strdup(const char *s)
 	dest = (char *)malloc(ft_strlen(s) + 1);
 	if (dest == NULL)
 		return (NULL);
-	ft_strlcpy(dest, s, ft_strlen(s));
+	ft_strlcpy(dest, s, ft_strlen(s) + 1);
 	return (dest);
 }
+
+/*#include <string.h>
+int	main()
+{
+	printf("%s\n", ft_strdup("This is a test!"));
+	printf("%s\n", strdup("This is a test!"));
+}*/

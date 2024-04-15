@@ -16,3 +16,10 @@ int	ft_isprint(int c)
 {
 	return (c >= ' ' && c <= '~');
 }
+
+/*#include <ctype.h>
+int	main(){
+	int	c = '~' + 1;
+	printf("%d\n", ft_isprint(c));
+	printf("%d\n", isprint(c));
+}*/

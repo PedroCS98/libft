@@ -27,9 +27,12 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*int main()
+
+/*#include <string.h>
+int main()
 {
-	int c = 't';
-	char *str = "batata";
-	printf("%s", ft_strchr(str, c));
+	int c = ' ';
+	char *str = "This is a test!";
+	printf("%s\n", ft_strrchr(str, c));
+	printf("%s\n", strrchr(str, c));
 }*/

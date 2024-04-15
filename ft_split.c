@@ -31,25 +31,25 @@ static int	word_count(char const *s, char c)
 
 static int	split_inator_inator(int *str_len, char ***array, char const *s, char c)
 {
-	int	n;
+	int	wc;
 
 	*array = NULL;
-	n = word_count(s, c);
+	wc = word_count(s, c);
 	*str_len = (int)ft_strlen(s);
-	*array = (char **)malloc(sizeof(char *) * (n + 1));
+	*array = (char **)malloc(sizeof(char *) * (wc + 1));
 	if (!*array)
 		return (0);
-	(*array)[n] = NULL;
-	return (n);
+	(*array)[wc] = NULL;
+	return (wc);
 }
 
-static char	**split_inator(int str_len, char **array, char const *s, char c)
+static char	**split_inator(char **array, int str_len, char const *s, char c)
 {
 	int	i;
 	int	m;
 	int	n;
 
-	if (!split_inator_inator(&str_len, &array, s, c))
+	if (split_inator_inator(&str_len, &array, s, c) <= 0)
 		return (NULL);
 	m = 0;
 	i = 0;
@@ -78,36 +78,36 @@ char	**ft_split(char const *s, char c)
 
 	array = NULL;
 	str_len = 0;
-	return (split_inator(str_len, array, s, c));
+	return (split_inator(array, str_len, s, c));
 }
 
-// void free_double_ptr(char **d_ptr)
-// {
-// 	if (d_ptr != NULL)
-// 	{
-// 		while (*d_ptr)
-// 		{
-// 			free(*d_ptr);
-// 			(d_ptr)++;
-// 		}
-// 		free(d_ptr);
-// 	}
-// }
-// int	main(){
-// 	char **array;
-// 	char *s = "Hoje e terca feira";
-// 	char c = ' ';
-// 	array = ft_split(s, c);
-// 	int i = 0;
-// 	while (array[i])
-// 	{
-// 		printf("%s\n", array[i]);
-// 		free(array[i]);
-// 		i++;
-// 	}
-// 	free(array);
-// 	//free_double_ptr(array);
-// }
+/*void free_double_ptr(char **d_ptr)
+{
+	if (d_ptr != NULL)
+	{
+		while (*d_ptr)
+		{
+			free(*d_ptr);
+			(d_ptr)++;
+		}
+		free(d_ptr);
+	}
+}
+int	main(){
+	char **array;
+	char *s = "This is a test!";
+	char c = ' ';
+	array = ft_split(s, c);
+	int i = 0;
+	while (array[i])
+	{
+		printf("%s\n", array[i]);
+		free(array[i]);
+		i++;
+	}
+	free(array);
+	//free_double_ptr(array);
+}*/
 //skip seperator
 //ver qts char ate prox sep
 //alloc mem

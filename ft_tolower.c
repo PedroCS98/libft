@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{
@@ -20,3 +20,11 @@ int	tolower(int c)
 	}
 	return (c);
 }
+
+/*int	main(){
+	int		i = -1;
+	char	s[] = "This [1231 is a Te42st";
+	while(s[++i])
+		s[i] = ft_tolower(s[i]);
+	printf("%s\n", s);
+}*/

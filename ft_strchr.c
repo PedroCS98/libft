@@ -27,9 +27,12 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*int main()
+
+/*#include <string.h>
+int main()
 {
-	int c = 't';
-	char *str = "";
-	printf("%s", ft_strchr(str, c));
+	int c = ' ';
+	char *str = "This is a test!";
+	printf("%s\n", ft_strchr(str, c));
+	printf("%s\n", strchr(str, c));
 }*/

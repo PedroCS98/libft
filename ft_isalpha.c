@@ -16,3 +16,11 @@ int	ft_isalpha(int c)
 {
 	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }
+
+/*#include <ctype.h>
+int	main()
+{
+	int	c = 123;
+	printf("%d\n", ft_isalpha(c));
+	printf("%d\n", isdigit(c));
+}*/
