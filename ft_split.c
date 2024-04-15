@@ -22,10 +22,8 @@ static int	word_count(char const *s, char c)
 	if (s[0] != c && s[0] != 0)
 		wc++;
 	while (s[++i] != 0)
-	{
 		if (s[i] == c && s[i + 1] != c && s[i + 1] != 0)
 			wc++;
-	}
 	return (wc);
 }
 

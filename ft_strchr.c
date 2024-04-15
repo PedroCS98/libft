@@ -18,13 +18,10 @@ char	*ft_strchr(const char *s, int c)
 
 	if (*s == '\0')
 		return (NULL);
-	i = 0;
+	i = -1;
 	while (s)
-	{
-		if (s[i] == (char) c)
+		if (s[++i] == (char) c)
 			return ((char *)(s + i));
-		i++;
-	}
 	return (NULL);
 }
 
