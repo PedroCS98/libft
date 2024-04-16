@@ -7,9 +7,8 @@
 
 // check output - do all mains
 // meter 42 headers
-// take out unnecessary makefile rules and save them somewhere else
+// move stuff.c to another folder
 // norminette
-// delete stuff.c
 
 char	*ft_itoa(int n)
 {
@@ -76,3 +75,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
+
+/*
+//meter no makefile depois de entregar o libft
+add to make file again after delivering it
+run:
+	cc libft.a && valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out
+
+rerun: re run
+
+gdb:	all
+		cc libft.a && gdb --args ./a.out
+
+fcount:
+	@echo "You have written $(shell cat $(SRCS) | wc -l) lines of code!"
+*/
