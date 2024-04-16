@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:03:47 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/16 14:46:33 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/16 21:25:38 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_itoa(int n)
 	i = 0;
 	if (n < 0)
 		i = 1;
-	nbr = (char *)calloc(1, dc + i + 1);
+	nbr = (char *)ft_calloc(1, dc + i + 1);
 	if (n == -2147483648)
 		return ((char *)"-2147483648");
 	if (n < 0)
@@ -45,15 +45,18 @@ char	*ft_itoa(int n)
 	while (dc-- > 0)
 	{
 		nbr[dc + i] = n % 10 + '0';
-		n %= 10;
+		n /= 10;
 	}
 	return (nbr);
 }
 
 /*int main(){
-	printf("%s\n", ft_itoa(-2147483648));
-	printf("%s\n", ft_itoa(-4));
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(4));
-	printf("%s\n", ft_itoa(22));
+	// printf("%s\n", ft_itoa(-2147483648));
+	// printf("%s\n", ft_itoa(-4));
+	// printf("%s\n", ft_itoa(0));
+	// printf("%s\n", ft_itoa(4));
+	// printf("%s\n", ft_itoa(22));
+	char *res = ft_itoa(10);
+		ft_print_result(res);
+		free(res);
 }*/

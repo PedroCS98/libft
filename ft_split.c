@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:27:42 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/16 14:54:46 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/16 22:57:48 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	word_count(char const *s, char c)
 	return (wc);
 }
 
-static int	split_inator_inator(int *str_len, char ***array, 
+void	split_inator_inator(int *str_len, char ***array, 
 	char const *s, char c)
 {
 	int	wc;
@@ -37,9 +37,7 @@ static int	split_inator_inator(int *str_len, char ***array,
 	*str_len = (int)ft_strlen(s);
 	*array = (char **)malloc(sizeof(char *) * (wc + 1));
 	if (!*array)
-		return (0);
-	(*array)[wc] = NULL;
-	return (wc);
+		return ;
 }
 
 static char	**split_inator(char **array, int str_len, char const *s, char c)
@@ -48,8 +46,7 @@ static char	**split_inator(char **array, int str_len, char const *s, char c)
 	int	m;
 	int	n;
 
-	if (split_inator_inator(&str_len, &array, s, c) <= 0)
-		return (NULL);
+	split_inator_inator(&str_len, &array, s, c);
 	m = 0;
 	i = 0;
 	while (s[i] != 0)
@@ -59,7 +56,7 @@ static char	**split_inator(char **array, int str_len, char const *s, char c)
 		str_len = 0;
 		while (s[i + str_len] != c && s[i + str_len] != 0)
 			str_len++;
-		array[m] = (char *)malloc(sizeof(char) * str_len + 1);
+		array[m] = (char *)malloc(sizeof(char) * (str_len + 1));
 		if (!array[m])
 			return (NULL);
 		n = 0;
@@ -77,7 +74,9 @@ char	**ft_split(char const *s, char c)
 
 	array = NULL;
 	str_len = 0;
-	return (split_inator(array, str_len, s, c));
+	array = split_inator(array, str_len, s, c);
+	array[word_count(s, c)] = NULL;
+	return (array);
 }
 
 /*void free_double_ptr(char **d_ptr)

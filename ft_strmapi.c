@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:03:40 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/16 14:56:09 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/16 19:14:46 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	i = -1;
 	while (s[++i] != 0)
-		str[i] = f(i, str[i]);
+		str[i] = f(i, s[i]);
 	str[i] = 0;
 	return (str);
 }
