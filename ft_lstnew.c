@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/16 14:47:11 by psimoes           #+#    #+#             */
+/*   Updated: 2024/04/16 15:04:39 by psimoes          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *new_node;
+	t_list	*new_node;
 
 	new_node = (t_list *)malloc(sizeof (t_list));
 	if (!new_node)

@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:27:42 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/12 21:45:03 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/16 14:54:46 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ static int	word_count(char const *s, char c)
 	return (wc);
 }
 
-static int	split_inator_inator(int *str_len, char ***array, char const *s, char c)
+static int	split_inator_inator(int *str_len, char ***array, 
+	char const *s, char c)
 {
 	int	wc;
 

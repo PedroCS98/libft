@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:03:40 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/12 23:03:05 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/16 14:56:09 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int 	i;
+	int		i;
 	char	*str;
 
 	str = (char *)malloc(ft_strlen(s) + 1);

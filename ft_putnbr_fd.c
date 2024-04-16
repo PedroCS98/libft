@@ -6,13 +6,13 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 03:37:42 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/13 04:04:13 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/16 14:54:03 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int	last_digit;
 
