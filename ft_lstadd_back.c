@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:46:50 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/16 14:49:47 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/17 00:06:30 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	ft_lstlast(lst)-> next = new;
+	ft_lstlast(*lst)-> next = new;
 }

@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:46:55 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/16 15:09:59 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/17 00:20:33 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 	while (*lst)
 	{
-		current = *lst;
-		ft_lstdelone(lst, del);
-		*lst = current -> next;
+		current = (*lst)-> next;
+		ft_lstdelone(*lst, del);
+		(*lst) = current;
 	}
 }
