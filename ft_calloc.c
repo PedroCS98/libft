@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 05:00:44 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/11 06:06:26 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/16 15:31:25 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, size);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
 

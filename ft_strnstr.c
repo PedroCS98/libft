@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 03:57:24 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/12 22:43:47 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/16 18:18:45 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!little)
+	if (!little || !*little)
 		return ((char *)big);
-	i = 0;
-	while (big && i < len)
+	i = -1;
+	while (++i < len && big[i])
 	{
-		j = 0;
-		while (big[i + j] != 0 && little 
-			&& big[i + j] == little[j] && i + j < len)
-			j++;
-		if (j == ft_strlen(little))
-			return (&((char *)big)[i]);
-		i++;
+		if (big[i] == little[0])
+		{
+			j = 0;
+			while (big[i + j] != 0 && big[i + j] == little[j] && i + j++ < len)
+				if (j == ft_strlen(little))
+					return ((char *)&big[i]);
+		}
 	}
 	return (NULL);
 }
