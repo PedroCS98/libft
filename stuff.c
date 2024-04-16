@@ -1,18 +1,14 @@
 
 // testar
 
-// substr (unknown L)
-// lists
-// fd's (how)
-
-
-// how to test strmapi
+// lstclear
+// lstiter
 
 
 // check output - do all mains
-//meter 42 headers
+// meter 42 headers
 // take out unnecessary makefile rules and save them somewhere else
-//norminette
+// norminette
 // delete stuff.c
 
 char	*ft_itoa(int n)
@@ -45,6 +41,7 @@ char	*ft_itoa(int n)
 	return (nbr);
 }
 
+//substituir pela original depois de entregar o libft
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
@@ -59,6 +56,23 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	while (src && i < size - dst_len - 1)
 		dst[j++] = src[i++];
 	dst[j] = '\0';
-	printf("%zu\n", j);
 	return (ft_strlen(src) + dst_len);
+}
+
+//substituir pela original depois de entregar o libft
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*substr;
+	size_t	i;
+	size_t	j;
+
+	substr = (char *)calloc(len + 1, 1);
+	if (!s || !substr)
+		return (0);
+	i = 0;
+	j = start;
+	while (j < ft_strlen(s) && i < len)
+		substr[i++] = s[j++];
+	substr[i] = '\0';
+	return (substr);
 }
