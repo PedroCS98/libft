@@ -25,14 +25,3 @@ re: fclean all
 
 bonus: $(BONUS_SRCS:.c=.o)
 	ar rsc $(NAME) $(BONUS_SRCS:.c=.o)
-
-run:
-	cc libft.a && valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out
-
-rerun: re run
-
-gdb:	all
-		cc libft.a && gdb --args ./a.out
-
-fcount:
-	@echo "You have written $(shell cat $(SRCS) | wc -l) lines of code!"
