@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:17:31 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/12 15:47:27 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/17 22:13:33 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 
+	if (!s1 || !s2)
+		return (0);
 	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (str == NULL)
 		return (NULL);

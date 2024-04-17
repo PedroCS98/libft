@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:07:10 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/16 20:04:08 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/17 22:10:12 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
+	if(!s1 || !set)
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	while (s1[start] && ft_strchr(set, s1[start]))
+	while (start <= end && ft_strchr(set, s1[start]))
 		start++;
+	if (start > end)
+		return (ft_strdup(s1 + end +1));
 	while (ft_strrchr(set, s1[end]))
 		end--;
 	str = malloc((end - start) * sizeof(char) + 2);

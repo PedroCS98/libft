@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 03:57:24 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/16 18:18:45 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/17 21:24:47 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!little || !*little)
+	if (!*little)
 		return ((char *)big);
 	i = -1;
 	while (++i < len && big[i])

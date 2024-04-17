@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 19:22:00 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/11 19:18:31 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/17 21:19:46 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
+	if (!dest && !src)
+		return (0);
 	if (dest > src)
 		while (n--)
 			((char *)dest)[n] = ((char *)src)[n];

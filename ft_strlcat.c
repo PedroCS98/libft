@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 22:36:04 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/16 16:49:47 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/17 21:39:36 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
+	if ((!dst || !src) && !size)
+		return (0);
 	i = ft_strlen(dst);
 	if (size == 0 || size <= i--)
 		return (ft_strlen(src) + size);
