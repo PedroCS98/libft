@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 19:21:18 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/17 21:19:02 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/19 17:08:56 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	if(!dest && !src)
+	if (!dest && !src)
 		return (0);
 	i = -1;
 	while (++i < n)

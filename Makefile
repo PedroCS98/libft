@@ -13,7 +13,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rsc $(NAME) $(OBJS)
+	@ar rsc $(NAME) $(OBJS)
 
 clean:
 	@rm -f $(OBJS) $(BONUS_SRCS:.c=.o)
@@ -24,4 +24,4 @@ fclean: clean
 re: fclean all
 
 bonus: $(BONUS_SRCS:.c=.o)
-	ar rsc $(NAME) $(BONUS_SRCS:.c=.o)
+	@ar rsc $(NAME) $(BONUS_SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:07:10 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/17 22:10:12 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/19 17:09:44 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
-	if(!s1 || !set)
+	if (!s1 || !set)
 		return (NULL);
 	start = 0;
 	end = ft_strlen(s1) - 1;

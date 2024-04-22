@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:03:47 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/16 21:25:38 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/04/19 17:08:23 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,47 +16,46 @@ static int	digit_counter(int n)
 {
 	int	dc;
 
-	dc = 0;
-	while (n != 0 && ++dc)
+	dc = 1;
+	while (n / 10 != 0)
+	{
 		n /= 10;
+		dc ++;
+	}
 	return (dc);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*nbr;
-	int		i;
 	int		dc;
+	int		long_n;
 
+	long_n = n;
 	dc = digit_counter(n);
-	i = 0;
 	if (n < 0)
-		i = 1;
-	nbr = (char *)ft_calloc(1, dc + i + 1);
-	if (n == -2147483648)
-		return ((char *)"-2147483648");
-	if (n < 0)
-	{
-		n *= -1;
-		nbr[0] = '-';
-	}
+		dc++;
+	nbr = (char *)ft_calloc(dc + 1, 1);
+	if (!nbr)
+		return (NULL);
+	nbr[dc] = 0;
 	if (n == 0)
-		return ((char *)"0");
+		return (nbr = "0");
+	if (n < 0)
+		long_n *= -1;
 	while (dc-- > 0)
 	{
-		nbr[dc + i] = n % 10 + '0';
-		n /= 10;
+		nbr[dc] = (unsigned int)long_n % 10 + '0';
+		long_n = (unsigned int)long_n / 10;
 	}
+	if (n < 0)
+		nbr[0] = '-';
 	return (nbr);
 }
-
 /*int main(){
-	// printf("%s\n", ft_itoa(-2147483648));
-	// printf("%s\n", ft_itoa(-4));
-	// printf("%s\n", ft_itoa(0));
-	// printf("%s\n", ft_itoa(4));
-	// printf("%s\n", ft_itoa(22));
-	char *res = ft_itoa(10);
-		ft_print_result(res);
-		free(res);
+	printf("%s\n", ft_itoa(-2147483648));
+	printf("%s\n", ft_itoa(-4));
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(4));
+	printf("%s\n", ft_itoa(22));
 }*/
