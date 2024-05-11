@@ -6,7 +6,7 @@
 /*   By: psimoes <psimoes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:47:05 by psimoes           #+#    #+#             */
-/*   Updated: 2024/04/17 15:51:10 by psimoes          ###   ########.fr       */
+/*   Updated: 2024/05/11 16:34:23 by psimoes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_lst;
 	t_list	*current;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
 	new_lst = NULL;
 	while (lst != NULL)
