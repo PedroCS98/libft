@@ -25,7 +25,7 @@ char	*ft_itoa(int n)
 	nbr = n;
 	if (nbr < 0)
 		nbr *= -1;
-	while (nbr / 10 != 0)
+	while (nbr != 0)
 	{
 		str[index--] = nbr % 10 + '0';
 		nbr /= 10;
